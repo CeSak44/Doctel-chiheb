@@ -24,7 +24,7 @@ dependencies:
   otp_text_field: 
   cloud_firestore:
   intl: 
-  group_button: 
+  group_button: ^4.8.0
   maps_launcher:
   share_plus_web:
   table_calendar:
@@ -39,6 +39,7 @@ dependencies:
   google_sign_in_web:
   basic_utils: 
   image_picker:
+  flutter_rating_bar:
 
 dev_dependencies:
   flutter_test:

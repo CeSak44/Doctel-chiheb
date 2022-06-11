@@ -1,11 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cote_pat/Page/Docter_Profil/profil_page.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'Page/Widgets/Header_widget.dart';
 import 'Page/Widgets/categoriecard.dart';
 import 'Page/Widgets/doctorcard.dart';
 import 'Page/Widgets/drawer_widget.dart';
 import 'Page/Widgets/mytitle.dart';
+import 'Page/Widgets/search_page.dart';
 import 'Page/profile_page.dart';
 import 'model/doctors.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -57,7 +60,7 @@ class _HomePgaeState extends State<HomePgae> {
           ),
         ),
         leading: IconButton(
-            icon: Icon(Icons.menu),
+            icon: const Icon(Icons.menu),
             color: Colors.white,
             onPressed: () {
               _key.currentState!.openDrawer();
@@ -67,8 +70,9 @@ class _HomePgaeState extends State<HomePgae> {
         backgroundColor: HexColor("#397EF5"),
         actions: [
           IconButton(
-              onPressed: (() {} // search input here
-
+              onPressed: (() {
+                Get.to(const SearchPage());
+              } // search input here
                   ),
               icon: const Icon(Icons.search))
         ],

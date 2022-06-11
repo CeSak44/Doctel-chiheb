@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../Mes_Rdvs/all_rdvs.dart';
 import '../Registration_pageForPat.dart';
+import '../feedback_page.dart';
 import 'Drawer_header.dart';
 import 'package:get/get.dart';
 
@@ -80,10 +81,7 @@ class _drawer_widgetState extends State<drawer_widget>
                   style: TextStyle(fontSize: h * 0.022),
                 ),
                 onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => RegistrationPageForDoc()));
+                  Get.to(const FeedbackPage());
                 },
               ),
               ListTile(
