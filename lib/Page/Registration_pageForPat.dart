@@ -49,14 +49,14 @@ class _RegistrationPageForDocState extends State<RegistrationPageForDoc> {
       text,
       overflow: overflow,
       maxLines: maxlines,
-      style: TextStyle(fontSize: 18, color: Colors.grey),
+      style: const TextStyle(fontSize: 18, color: Colors.grey),
     );
   }
 
   Widget buildBotton() => TextButton(
         style: ElevatedButton.styleFrom(
-            padding: EdgeInsets.symmetric(horizontal: 9, vertical: 7),
-            textStyle: TextStyle(fontSize: 15, color: Colors.grey)),
+            padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 7),
+            textStyle: const TextStyle(fontSize: 15, color: Colors.grey)),
         child: Text(isReadmore ? "Read Less" : "Read More"),
         onPressed: () {
           setState(() {
