@@ -10,12 +10,8 @@ class SearchPage extends StatefulWidget {
   State<SearchPage> createState() => _SearchPageState();
 }
 
-CollectionReference _firebaseFirestore =
-FirebaseFirestore.instance.collection('Docuser');
-
 class _SearchPageState extends State<SearchPage> {
   String name="";
-
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +34,8 @@ class _SearchPageState extends State<SearchPage> {
           stream: (name == "")
               ?FirebaseFirestore.instance.collection("Docuser").snapshots()
               :FirebaseFirestore.instance.collection("Docuser")
-              .where("searchKeyword" , arrayContains: name)
+          .where("firstname",isGreaterThanOrEqualTo: name.toString().toUpperCase() )
+          .where("firstname", isLessThan: name + 'z')
               .snapshots(),
           builder: (context , snapshot){
             return(snapshot.connectionState == ConnectionState.waiting)
@@ -56,7 +53,7 @@ class _SearchPageState extends State<SearchPage> {
                       child: Column(
                         children: [
                           ListTile(
-                            title: Text("Dr."+ data["lastname"]),
+                            title: Text("Dr."+ data["firstname"]),
                             subtitle: Text(data["specialité"]),
                             leading: const CircleAvatar(
                               radius: 25,
